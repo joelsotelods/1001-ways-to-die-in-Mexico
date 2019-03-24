@@ -45,7 +45,7 @@ We will create at least 4 Endpoints, which will allow to query the data.
 
 5) *Optional: Query time of the day to day by most common causes of death in Mexico.
 
-*HTML and css
+*HTML and css*
 * Design html template to hold all the information, allowing dashboard view for general findings and individual queries
 
 *APP.js*
