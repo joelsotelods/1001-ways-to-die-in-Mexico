@@ -15,23 +15,23 @@ Beyond will determine the average age of the deceased population, and the most c
 
 ## Methods
 
-*Data
+*Data*
 
 For this purpose, we will use two databases:
 1)	Inegi deaths ( 2012-2017)
 2)	Population by federative entities (2012-2017)
 
-*ETL Process
+*ETL Process*
 
 We will clean, organize and upload both databases to a relational database (sqlite).
 Create all views necessary for analysis and deployment.
 
-*Data engeneering
+*Data engeneering*
 
 Data will be prepared and relative death rates obtained for the population of each state by using the observed mortality divided by the total population.
 Also, bins will be created to define age groups.
 
-*Flask-sqlalchemy Endpoints
+*Flask-sqlalchemy Endpoints*
 
 We will create at least 4 Endpoints, which will allow to query the data.
 
@@ -48,12 +48,13 @@ We will create at least 4 Endpoints, which will allow to query the data.
 *HTML and css
 * Design html template to hold all the information, allowing dashboard view for general findings and individual queries
 
-*APP.js
+*APP.js*
 
 * Visualization with plotly.js, D3.js and chartist.js (optional: interactive map).
 
-*Deployment
+*Deployment*
 
 The final product will be deployed using heroku
+
 
 
