@@ -1,5 +1,7 @@
 # 1001-ways-to-die-inMexico
 
+![](https://github.com/JoannePeel/1001-ways-to-die-in-Mexico/blob/master/assets/images/mexicraneos.png)
+
 ## Background 
 
 In Mexico, there have been important changes in the epidemiological occurrence of diseases, related to environmental, demographic, economic, social, and cultural changes, which have influenced the epidemiological profile, as well as the characteristics related to the presence of disease and death in the Mexican population.
