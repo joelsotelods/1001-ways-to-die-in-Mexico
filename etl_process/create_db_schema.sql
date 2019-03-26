@@ -64,10 +64,11 @@ CREATE TABLE d_defunciones_generales (
   mun_ocules INT NULL,
   loc_ocules INT NULL,
   razon_m INT NULL,
-  dis_re_oax INT NULL
+  dis_re_oax INT NULL,
+  data_year INT NULL
 );
 
 create view vw_derecho_habiencia as
-select derechohab, (select ded.DESCRIP from c_dederech ded where ded.dederech_id = def.derechohab) derechi_habiencia, count(*) cantidad_derecho
+select data_year, derechohab, (select ded.DESCRIP from c_dederech ded where ded.dederech_id = def.derechohab) derechi_habiencia, count(*) cantidad_derecho
 from d_defunciones_generales def 
-group by derechohab;
+group by data_year, derechohab;
