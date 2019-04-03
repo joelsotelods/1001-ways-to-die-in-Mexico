@@ -14,3 +14,10 @@ Select data_year, ent_regis, count(*) count_ from d_defunciones_generales
 group by ent_regis, data_year
 
 Select * FROM vw_deaths_states 
+
+Create view vw_time_to_die as
+select horas, 
+count(*) count_
+from d_defunciones_generales ddef
+group by horas
+order by horas;

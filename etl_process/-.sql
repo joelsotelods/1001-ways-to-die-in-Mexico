@@ -18,7 +18,7 @@ count(*) count_
 from d_defunciones_generales ddef
 where horas = 2
 group by horas
-order by count_ desc;
+order by horas;
 
 
 select  causa_def, 
