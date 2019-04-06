@@ -1,0 +1,68 @@
+
+function create_map(data) {
+
+	//clean html to make sure everything gets rewriten well
+	var bubble_selector = d3.select("#map_container");
+	bubble_selector.html("");
+	d3.select('#map_container').html('<div id="map"></div>');
+
+	// Create a map object
+	var myMap = L.map("map", {
+		center: [24, -101.26],
+		zoom: 5
+	});
+
+
+	L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+		attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+		maxZoom: 18,
+		id: "mapbox.streets-basic",
+		accessToken: API_KEY
+	}).addTo(myMap);
+
+
+	for(i = 0; i < data.length; i++) {
+
+		L.circle([data[i].Latitude,data[i].Longitude], {
+			fillOpacity: 0.75,
+			color: "black",
+			fillColor: markerColor(data[i].muertes),
+
+			// Setting our circle's radius equal to the output of our markerSize function
+			// This will make our marker's size proportionate to its population
+			radius: markerSize(data[i].muertes)
+		}).bindPopup("<h1>" + data[i].entidad_ocurrencia + "</h1> <hr> <h3>Death count: " + data[i].muertes + "</h3>").addTo(myMap);
+
+		console.log(data[i].Latitude);
+		console.log(data[i].Longitude);
+		console.log(data[i].entidad_ocurrencia);
+		console.log(data[i].data_year);
+		console.log(data[i].muertes);
+	}
+
+}
+
+// Define a markerSize
+function markerSize(deaths) {
+	if (deaths<10000) {
+		return deaths*3
+	} 
+	else if (deaths<30000) {
+		return deaths*2
+	} else { 
+		return deaths
+	}
+
+}
+
+function markerColor(deaths) {
+	if (deaths<10000) {
+		return "green"
+	} 
+	else if (deaths<30000) {
+		return "yellow"
+	} else { 
+		return "red"
+	}
+
+}
