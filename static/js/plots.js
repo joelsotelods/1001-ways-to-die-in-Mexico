@@ -29,7 +29,6 @@ function create_map(data) {
 			fillColor: markerColor(data[i].muertes),
 
 			// Setting our circle's radius equal to the output of our markerSize function
-			// This will make our marker's size proportionate to its population
 			radius: markerSize(data[i].muertes)
 		}).bindPopup("<h1>" + data[i].entidad_ocurrencia + "</h1> <hr> <h3>Death count: " + data[i].muertes + "</h3>").addTo(myMap);
 
@@ -64,5 +63,37 @@ function markerColor(deaths) {
 	} else { 
 		return "red"
 	}
+
+}
+
+
+function pie_top_10(data_process){
+
+	// Declaration of empty arrays to store info
+	var data_year = [];
+	var lista_mex_desc = [];
+	var muertes = [];
+
+
+	for(i = 0; i < data_process.length; i++) {
+		console.log(data_process[i]);
+		data_year.push(data_process[i].data_year);
+		lista_mex_desc.push(data_process[i].lista_mex_desc);
+		muertes.push(data_process[i].muertes);
+	}
+
+	var data = [{
+		values: muertes,
+		labels: lista_mex_desc,
+		type: "pie"
+	}];
+
+	var layout = {
+		height: 600,
+		width: 800
+	};
+
+	Plotly.plot("pie_motivate", data, layout);
+
 
 }

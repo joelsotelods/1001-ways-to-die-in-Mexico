@@ -33,6 +33,23 @@ function buildCharts(year_to_show) {
 		console.log(all_Data);
 	 
 		create_map(all_Data);
+
+	
+		//pie_chart(all_Data);
+		//scatter_plot(all_Datas);
+		
+	}
+	);
+
+
+	d3.json("/data_top_10/"+year_to_show).then( (all_Data) => {
+		
+		console.log("all_samples data_top_10:");
+		console.log(all_Data);
+	 
+		
+
+		pie_top_10(all_Data);
 		//pie_chart(all_Data);
 		//scatter_plot(all_Datas);
 		
