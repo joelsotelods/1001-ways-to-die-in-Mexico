@@ -258,5 +258,48 @@ def death_by_gender(year_to_process):
     print(df)
     return jsonify(df)
 
+
+@app.route("/derechohabiencia/<year_to_process>")
+def derechohabiencia(year_to_process):
+    
+    try:
+        print("[#########] Reading table")
+        
+        print(path + db_name)
+        conn = lite.connect(path + db_name)
+
+        cursor = conn.cursor()
+
+        sql_select_Query = "select * from vw_derechohabiencia_death where data_year = "+ str(year_to_process) + " order by muertes desc;"
+        print(sql_select_Query)
+
+        cursor.execute(sql_select_Query)
+
+        result_df = DataFrame(cursor.fetchall())
+        table_desc = cursor.description
+
+        headers = []
+        for header in table_desc:
+            headers.append(header[0])
+
+        result_df.columns = headers
+
+        cursor.close()
+        
+        print("[#########] Table saved to dataframe")
+
+    except Exception as e:
+        print(f'Error detected in file', str(e))
+    finally:
+        #closing database connection.
+        conn.close()
+        print("[#########] SQLite connection is closed")
+
+    print(result_df)
+    
+    df = result_df.to_dict(orient='records')
+    print(df)
+    return jsonify(df)
+
 if __name__ == "__main__":
     app.run()

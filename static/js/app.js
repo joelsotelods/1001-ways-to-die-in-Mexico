@@ -61,11 +61,24 @@ function buildCharts(year_to_show) {
 
 	d3.json("/death_by_gender/"+year_to_show).then( (all_Data) => {
 		
-		console.log("all_samples data_top_10:");
+		console.log("death_by_gender");
 		console.log(all_Data);
 	 
 		
 		bar_chart_gender(all_Data);
+
+		
+	}
+	);
+
+
+	d3.json("/derechohabiencia/"+year_to_show).then( (all_Data) => {
+		
+		console.log("derechohabiencia");
+		console.log(all_Data);
+	 
+		
+		bar_chart_derechohabiencia(all_Data);
 
 		
 	}

@@ -69,6 +69,11 @@ function markerColor(deaths) {
 
 function pie_top_10(data_process){
 
+	//clean html to make sure everything gets rewriten well
+	var pie_selector = d3.select("#pie_1_container");
+	pie_selector.html("");
+	d3.select('#pie_1_container').html('<div id="pie_motivate"></div>');
+
 	// Declaration of empty arrays to store info
 	var data_year = [];
 	var lista_mex_desc = [];
@@ -102,6 +107,10 @@ function pie_top_10(data_process){
 
 function bar_chart_gender(data_process){
 
+	var barchart_selector = d3.select("#bar_chart_container");
+	barchart_selector.html("");
+	d3.select('#bar_chart_container').html('<div id="bar_chart"></div>');
+
 	// Declaration of empty arrays to store info
 	var data_year = [];
 	var id_gender = [];
@@ -127,6 +136,43 @@ function bar_chart_gender(data_process){
 	];
 
 	Plotly.newPlot('bar_chart', data);
+
+
+}
+
+
+
+function bar_chart_derechohabiencia(data_process){
+
+	var barchart_selectord = d3.select("#derecho_bar_container");
+	barchart_selectord.html("");
+	d3.select('#derecho_bar_container').html('<div id="derecho_bar"></div>');
+
+	// Declaration of empty arrays to store info
+	var data_year = [];
+	var derechohab = [];
+	var derechohabiencia = [];
+	var muertes = [];
+
+
+	for(i = 0; i < data_process.length; i++) {
+		console.log(data_process[i]);
+		data_year.push(data_process[i].data_year);
+		derechohab.push(data_process[i].derechohab);
+		derechohabiencia.push(data_process[i].derechohabiencia);
+		muertes.push(data_process[i].muertes);
+	}
+
+
+	var data = [
+	{
+		x: derechohabiencia,
+		y: muertes,
+		type: 'bar'
+	}
+	];
+
+	Plotly.newPlot('derecho_bar', data);
 
 
 }
