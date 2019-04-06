@@ -97,3 +97,36 @@ function pie_top_10(data_process){
 
 
 }
+
+
+
+function bar_chart_gender(data_process){
+
+	// Declaration of empty arrays to store info
+	var data_year = [];
+	var id_gender = [];
+	var sexo_desc = [];
+	var muertes = [];
+
+
+	for(i = 0; i < data_process.length; i++) {
+		console.log(data_process[i]);
+		data_year.push(data_process[i].data_year);
+		id_gender.push(data_process[i].id_gender);
+		sexo_desc.push(data_process[i].sexo_desc);
+		muertes.push(data_process[i].muertes);
+	}
+
+
+	var data = [
+	{
+		x: sexo_desc,
+		y: muertes,
+		type: 'bar'
+	}
+	];
+
+	Plotly.newPlot('bar_chart', data);
+
+
+}

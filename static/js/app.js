@@ -50,11 +50,27 @@ function buildCharts(year_to_show) {
 		
 
 		pie_top_10(all_Data);
+
+
 		//pie_chart(all_Data);
 		//scatter_plot(all_Datas);
 		
 	}
 	);
+
+
+	d3.json("/death_by_gender/"+year_to_show).then( (all_Data) => {
+		
+		console.log("all_samples data_top_10:");
+		console.log(all_Data);
+	 
+		
+		bar_chart_gender(all_Data);
+
+		
+	}
+	);
+
 
 }
 
