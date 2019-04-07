@@ -72,3 +72,34 @@ create view vw_derecho_habiencia as
 select data_year, derechohab, (select ded.DESCRIP from c_dederech ded where ded.dederech_id = def.derechohab) derechi_habiencia, count(*) cantidad_derecho
 from d_defunciones_generales def 
 group by data_year, derechohab;
+
+
+Create VIEW vw_def_by_years as 
+
+select data_year, causa_def, ent_regis,
+(select DESCRIP from c_decatcausa cda where cda.decatcausa_id =  ddef.causa_def) asdasd,
+count(*) count_
+from d_defunciones_generales ddef
+group by causa_def, data_year
+order by count_ desc;
+
+CREATE VIEW  vw_deaths_states as 
+Select data_year, ent_regis, count(*) count_ from d_defunciones_generales
+group by ent_regis, data_year
+
+Select * FROM vw_deaths_states
+
+Create view vw_time_to_die as
+select horas, data_year,
+count(*) count_
+from d_defunciones_generales ddef
+group by horas
+order by horas;
+
+create view vw_derechohabiencia_death as
+select data_year, 
+	derechohab, 
+	(select d_derech.DESCRIP from c_dederech d_derech where d_derech.dederech_id = ddef.derechohab) derechohabiencia,
+    count(*) muertes
+from d_defunciones_generales ddef
+group by data_year, derechohab;
