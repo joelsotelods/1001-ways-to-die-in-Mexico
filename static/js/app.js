@@ -29,12 +29,12 @@ function buildCharts(year_to_show) {
 
 	d3.json("/data_map/"+year_to_show).then( (all_Data) => {
 		
-		console.log("all_samples:");
-		console.log(all_Data);
+		// console.log("all_samples:");
+		// console.log(all_Data);
 	 
 		create_map(all_Data);
+		bubble_deaths(all_Data);
 
-	
 		//pie_chart(all_Data);
 		//scatter_plot(all_Datas);
 		
@@ -46,12 +46,8 @@ function buildCharts(year_to_show) {
 		
 		console.log("all_samples data_top_10:");
 		console.log(all_Data);
-	 
-		
 
 		pie_top_10(all_Data);
-
-
 		//pie_chart(all_Data);
 		//scatter_plot(all_Datas);
 		
@@ -61,25 +57,20 @@ function buildCharts(year_to_show) {
 
 	d3.json("/death_by_gender/"+year_to_show).then( (all_Data) => {
 		
-		console.log("death_by_gender");
+		console.log("all_samples data_top_10:");
 		console.log(all_Data);
-	 
-		
+	 		
 		bar_chart_gender(all_Data);
-
 		
 	}
 	);
 
-
-	d3.json("/derechohabiencia/"+year_to_show).then( (all_Data) => {
+	d3.json("/derechohabientes_by_year/"+year_to_show).then( (all_Data) => {
 		
-		console.log("derechohabiencia");
+		console.log("all_samples DERECHOHABIENTES:");
 		console.log(all_Data);
-	 
-		
-		bar_chart_derechohabiencia(all_Data);
-
+	 		
+		get_decrechohabientes(all_Data);
 		
 	}
 	);
@@ -122,7 +113,6 @@ function get_muertes_by_state() {
 
 	});
 }
-
 
 
 // Initialize the dashboard

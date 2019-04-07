@@ -7,12 +7,22 @@
 	<head>
 
 		<meta charset="UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-		<title>Flask Plotlyjs Example</title>
+		<title>1001 Ways to Die in Mexico</title>
+
+		    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
 
 
 		 <!-- Leaflet CSS & JS -->
@@ -37,16 +47,39 @@
 
 	</head>
 
+		<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+	<a class="navbar-brand" href="#">1001 Ways to die in Mexico</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav ml-auto">
+		<li class="nav-item active">
+			<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item dropdown ml-auto">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Choose analysis
+			</a>
+			<div class="dropdown-menu dropdown-menu-right text-right" aria-labelledby="navbarDropdownMenuLink">
+			<a class="dropdown-item" href="static/html/index-formas_morir.html">Formas de morir en México</a>
+			<a class="dropdown-item" href="static/html/index-top10_muertes.html">Top 10 muertes en México en último año</a>
+			<a class="dropdown-item" href="static/html/index-timeseries.html">Timeseries de top 10 causas en últimos 5 años</a>
+			<a class="dropdown-item" href="static/html/index-hora_de_muerte.html">Hora de muerte más común</a>
+			<a class="dropdown-item" href="static/html/index-causas.html">Causas más raras</a>
+			</div>
+		</li>
+		</ul>
+	</div>
+	</nav>
+
     
 	<body>
+
             <div class="row">
 
                     <div class="col-md-12 jumbotron text-center">
-    
-                        <h1>1001 Ways to die in Mexico</h1>
-    
-                        
-    
+                        <h1>1001 Ways to die in Mexico</h1>            
                     </div>
         <div class="mask rgba-gradient d-flex justify-content-center align-items-center"> 
             <div class="col-md-12 mb-4 white-text text-center wow fadeIn">
@@ -74,8 +107,7 @@
                 </div>    
             </div>     
         </div>     
-    <div class="container">	
-    
+
                                
         <h2 class="h1-responsive font-weight-bold text-center mb-5">Where do people die?</h2>
         <!-- Section description -->
@@ -139,9 +171,7 @@
                         most people die in the installations of IMSS.</p>
 
 				<div id="derecho_bar_container" class="col-md-12">
-
-					<div id="myDiv"></div>
-
+				  <div id='myDiv'></div>
 				</div>
 
 			</div>
@@ -168,7 +198,19 @@
 		<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 
+		  <!-- Footer -->
+		<div class="card fixed-bottom">
+		<div class="card-body">
+
+			<div class="footer-copyright text-center py-3">© 2019 Data analysis:
+				<a href="https://github.com/danielczz/"class="btn btn-primary"> Powered by JDJs Soluciones</a>
+			</div>
+			
+		</div>
+		</div>
 
 	</body>
+
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
 </html>
