@@ -22,7 +22,6 @@ import sqlite3 as lite
 app = Flask(__name__)
 
 
-
 path = 'db/'
 db_name = 'deaths_inegi.sqlite'
 
@@ -258,9 +257,8 @@ def death_by_gender(year_to_process):
     print(df)
     return jsonify(df)
 
-
-@app.route("/derechohabiencia/<year_to_process>")
-def derechohabiencia(year_to_process):
+@app.route("/derechohabientes_by_year/<year_to_process>")
+def derechohabientes_by_year(year_to_process):
     
     try:
         print("[#########] Reading table")
@@ -270,7 +268,7 @@ def derechohabiencia(year_to_process):
 
         cursor = conn.cursor()
 
-        sql_select_Query = "select * from vw_derechohabiencia_death where data_year = "+ str(year_to_process) + " order by muertes desc;"
+        sql_select_Query = "select * from vw_derecho_habiencia where data_year = "+ str(year_to_process) + " order by cantidad_derecho asc;"
         print(sql_select_Query)
 
         cursor.execute(sql_select_Query)
