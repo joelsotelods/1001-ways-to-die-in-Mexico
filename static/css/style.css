@@ -9,16 +9,26 @@
   } */
   
   .jumbotron {
+
     position: relative;
-    height: 350px;
-    padding: 50px;
+    height: 500px;
+    padding: 180px;
     margin: 20;
     background: white;
-    background-image: url("https://cdn.pixabay.com/photo/2014/07/24/21/35/mortality-401222_1280.jpg");
+    background-image: url("../images/landing.jpeg");
     background-attachment: fixed;
     background-position: bottom center;
     background-size: cover;
     color: white;
+    text-shadow:rgb(232, 124, 16) 0px 0px 100px;
+
+  }
+
+  .navbar{
+    background-image:-webkit-linear-gradient(0,rgb(0,0,0) 0%,rgb(214,66,2) 100%);
+    background-image:-moz-linear-gradient(0,rgb(0,0,0) 0%,rgb(214,66,2) 100%);
+    background-image:-o-linear-gradient(0,rgb(0,0,0) 0%,rgb(214,66,2) 100%);
+    background-image:-ms-linear-gradient(0,rgb(0,0,0) 0%,rgb(214,66,2) 100%);
   }
   
   /* set map, body, and html to 100% of the screen size */
@@ -46,7 +56,6 @@
       display: block;
   
   }
-  
   
   
   /* #map_container 

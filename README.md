@@ -1,15 +1,16 @@
-# 1001-ways-to-die-inMexico
+# 1001 Ways to Die in Mexico
 
-![](https://github.com/JoannePeel/1001-ways-to-die-in-Mexico/blob/master/assets/images/mexicraneos.png)
+![Landing page](static/images/mexicraneos.png)
 
-## Background 
+## Project background 
 
-In Mexico, there have been important changes in the epidemiological occurrence of diseases, related to environmental, demographic, economic, social, and cultural changes, which have influenced the epidemiological profile, as well as the characteristics related to the presence of disease and death in the Mexican population.
+In Mexico, there have been important changes in the **epidemiological occurrence of diseases**, related to: Environmental, demographic, economic, social, and cultural changes, which have influenced the epidemiological profile, as well as the characteristics related to the **presence of disease and death in the Mexican population**.
 
-This has been described as a phenomenon of risk transition, since during the first half of the 20th century, the population was exposed to the inherent risks of a country in social development, characterized by poor hygiene and underutilization of health services, while in the second half there was a transition to health problems associated with development and urbanization. 
-As a result, risks of exposure to a sedentary lifestyle, stress, tobacco and drug use, violence, as well as unhealthy eating habits have increased, resulting in high cholesterol and high blood pressure, factors responsible for much of the global burden of the disease. This transition has resulted in problems such as obesity and other chronic degenerative diseases at increasingly younger ages.
+This has been described as a _phenomenon of risk transition_, since during the first half of the 20th century, the population was exposed to the inherent risks of a country in social development, characterized by poor hygiene and underutilization of health services, while in the second half there was a transition to health problems associated with development and urbanization.
 
-Therefore, the objective of this project was to analyze 1) the main causes of mortality in Mexico in the period 2012-2017.
+As a result, risks of exposure to a sedentary lifestyle, stress, tobacco and drug use, violence, as well as unhealthy eating habits have increased, resulting in high cholesterol and high blood pressure, **factors responsible for much of the global burden of the disease.** This transition has resulted in problems such as obesity and other chronic degenerative diseases at increasingly younger ages.
+
+Therefore, the main objective of this project is to analyze the mortality and defunctions indicators that the Mexican population has been presenting in the period 2012-2017.
 
 ## Methods
 
@@ -40,8 +41,7 @@ Check out the code [here](https://github.com/JoannePeel/1001-ways-to-die-in-Mexi
 
 ## Result
 
-The result was an interactive webpage with 4 different graphs, which can be updated for 6 different years, as well as an relational database which may be filtered easily to extract interesting information about death, causes of death and other related information..
+The result was an interactive webpage with 4 different graphs, which can be updated for 6 different years, as well as an relational database which may be filtered easily to extract interesting information about death, causes of death and other related information.
 
-![](https://github.com/JoannePeel/1001-ways-to-die-in-Mexico/blob/master/screenshot.png)
-
+![Landing page](static/images/screencapture.png)
 
