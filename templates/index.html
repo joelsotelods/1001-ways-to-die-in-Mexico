@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>1001 Ways to die in Mexico</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  		 <!-- Leaflet CSS & JS -->
+
+		 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+
+		 integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+
+		 crossorigin=""/>
+
+		 <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+
+		 integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+
+		 crossorigin=""></script>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+		<link rel="shortcut icon" href="#" />
+
+</head>
+<body>
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">1001 Ways to die in Mexico</a>
+</nav>
+
+<div class="container">
+  <div class="jumbotron">
+    <h3 class="display-3 font-weight-bold">1001 Ways to die in Mexico</h3>
+    <h9>Welcome to the analysis for Mortality and Defunctions in Mexico as a country in the period 2012-2017</h9>         
+  </div>
+</div>
+
+<br>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-3">
+
+      <div class="well">
+        <h5>SELECT Year:</h5>
+        <select id="selDataset" onchange="optionChanged(this.value)"></select>
+      </div>
+
+      <h4>How, why and when do people die in Mexico?</h4>
+      <p>In Mexico, there have been important changes in the epidemiological occurrence of diseases, related to environmental, demographic, economic, social, and cultural changes, which have influenced the epidemiological profile, as well as the characteristics related to the presence of disease and death in the Mexican population.This has been described as a phenomenon of risk transition, since during the first half of the 20th century, the population was exposed to the inherent risks of a country in social development, characterized by poor hygiene and underutilization of health services, while in the second half there was a transition to health problems associated with development and urbanization. As a result, risks of exposure to a sedentary lifestyle, stress, tobacco and drug use, violence, as well as unhealthy eating habits have increased, resulting in high cholesterol and high blood pressure, factors responsible for much of the global burden of the disease. This transition has resulted in problems such as obesity and other chronic degenerative diseases at increasingly younger ages. Therefore, the objective of this project was to analyze the main causes of mortality in Mexico in the period 2012-2017, as well as aspects of death recorded.</p>
+
+
+    </div>
+    
+    <div class="col-9 bg-warning">
+      <div class="row">
+
+        <div class="col-12 bg-light">        
+          <h2 class="h1-responsive font-weight-bold text-left mb-5">Where do people die?</h2>
+          <p class="lead grey-text text-left w-responsive mx-auto mb-5">Death rates are higher in areas with greater population density.</p>
+
+          <div class="row">
+				    <div id="map_container" class="col-md-12">
+					    <div id="map"></div>
+				    </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 bg-secondary">
+          <h2 class="h1-responsive font-weight-bold text-left mb-5">What are the main causes of death?</h2>
+          <p class="lead grey-text text-left w-responsive mx-auto mb-5">The main cause of death in Mexico is diabetes, followed by heart attack and agressions.</>
+
+          <div class="row">
+            <div id="pie_1_container">
+              <div id="pie_motivate"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 bg-primary">
+          <h2 class="h1-responsive font-weight-bold text-left mb-5">Are there differences between genders?</> 
+          <p class="lead grey-text text-left w-responsive mx-auto mb-5">In the period studied there were more deaths of males than of females.</>
+             
+          <div class="row">
+            <div id="bar_chart_container">
+              <div id="bar_chart"></div>
+            </div>
+          </div>  
+
+        </div>
+
+        <div class="col-12 bg-light">
+
+          <div class="row">
+            <h2 class="h1-responsive font-weight-bold text-left mb-5">In which insurance system do more people die?</>
+            <p class="lead grey-text text-left w-responsive mx-auto mb-5">Despite of seguro popular, being the greatest healthcare provide in Mexico, most people die in the installations of IMSS.</p>
+              <div id="myDiv"></div>
+          </div>
+        
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+		<!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+		
+		<!-- API key -->
+
+		<script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
+
+		<!-- Our JS -->
+
+		<script type="text/javascript" src="{{ url_for('static', filename='js/plots.js') }}"></script>
+
+		<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+<br>
+
+<!-- Footer -->
+<div class="card stick-bottom">
+  <div class="card-body">
+
+    <div class="footer-copyright text-center py-3">© 2019 Data analysis:
+          <a href="https://github.com/danielczz/"class="btn btn-primary"> Powered by JDJs Soluciones</a>
+    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>
